@@ -59,7 +59,7 @@ class UserCreationAPI(APIView):
 class EmailVerification(APIView):
     """ Email verification section """
     @staticmethod
-    def patch(request, pk):
+    def get(request, pk):
         try:
             user = UserModel.objects.get(id=pk)
             user.active = True
