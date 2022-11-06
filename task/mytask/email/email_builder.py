@@ -9,5 +9,5 @@ class EmailBuilder:
         message += "Registration is Successfully"
 
         message += f"<H1>Hi {user.user_name}! Greetings from Us!</H1>"
-        message += f"<a href='http://127.0.0.1:8000/verify-user/{user.id}'>Please click here to verify</a>"
+        message += f"<a href='https://mytasktest.herokuapp.com/verify-user/{user.id}'>Please click here to verify</a>"
         return message
