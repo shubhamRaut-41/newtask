@@ -26,7 +26,7 @@ def pass_validate(val):
 
 
 class UserSerializer(serializers.ModelSerializer):
-    """Validate some input details..."""
+    """Validate some input details"""
     password = serializers.CharField(validators=[pass_validate])
     user_name = serializers.CharField(validators=[user_validation])
 

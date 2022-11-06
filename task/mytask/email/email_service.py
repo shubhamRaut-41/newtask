@@ -3,8 +3,9 @@ from .email_builder import EmailBuilder
 
 
 class EmailService:
+    """ Email services for user"""
     @staticmethod
-    def send(msg,user):
+    def send(msg, user):
         text = EmailBuilder.content(user)
         email = EmailMessage(msg.subject, text, msg.frm, msg.to)
         email.content_subtype = "html"
