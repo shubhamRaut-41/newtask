@@ -31,31 +31,6 @@ class UserCreation(APIView):
                       {"error": {d: user_form.errors[d][0].title() for d in user_form.errors.keys()}})
 
 
-class UserCreationAPI(APIView):
-    """ User Store Section Using Api"""
-    @staticmethod
-    def get(request):
-        user_form = UserModel.objects.all()
-        serialize_form = UserSerializer(user_form, many=True)
-        return Response(serialize_form.data)
-
-    @staticmethod
-    def post(request):
-        user_form = UserSerializer(data=request.data)
-        if user_form.is_valid():
-            obj = user_form.save()
-            emsg = EmailMessage()
-            emsg.to = [request.data['email_id']]
-            emsg.subject = "Registration"
-            emsg.user = obj
-            mail = EmailService.send(emsg, obj)
-            if mail == 1:
-                return Response({
-                    'success': "Please check your mail for verification..."
-                }, status=status.HTTP_200_OK)
-        return Response(user_form.errors, status=status.HTTP_400_BAD_REQUEST)
-
-
 class EmailVerification(APIView):
     """ Email verification section """
     @staticmethod

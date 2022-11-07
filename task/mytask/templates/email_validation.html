@@ -12,12 +12,11 @@
         <div class="form-group form-text text-muted">
             <form method="post">
                 {% csrf_token %}
-                <h2 style="margin-left:20%; color:#ffcd18;">Hi {{user.user_name}}</h2>
+                <h2 style="margin-left:10%; color:#ffcd18;">Hi {{user.user_name}}</h2>
                 <h3 style="margin-left:10%;">
                     You are successfully verified...
                 </h3>
-                <a href="/" class="btn btn-info col-lg-4" value="Take New Entry">Take New User Entry Using Form</a>
-                <a href="/check-user-api" class="btn btn-info col-lg-4" value="Take New Entry">Take New User Entry Using Api</a>
+                <a href="/" class="btn btn-info col-lg-4" style="margin-top: 10px; margin-left: 80px">Take New User Entry Using Form</a>
             </form>
         </div>
     </div>
