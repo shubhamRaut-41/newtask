@@ -72,7 +72,6 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'task.wsgi.application'
 
-
 # Email Sending Setup
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST = 'smtp.gmail.com'
@@ -82,23 +81,23 @@ EMAIL_HOST_USER = 'shubhamraut666@gmail.com'
 EMAIL_HOST_PASSWORD = 'zcuhxlyuineqifxc'
 
 # Database sqlite3
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
-    }
-}
-
-# Database postgres
 # DATABASES = {
 #     'default': {
-#         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-#         'NAME': 'newtask',
-#         'USER': 'postgres',
-#         'PASSWORD': '1234',
-#         'PORT': '5432'
+#         'ENGINE': 'django.db.backends.sqlite3',
+#         'NAME': BASE_DIR / 'db.sqlite3',
 #     }
 # }
+
+# Database postgres
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'newtask',
+        'USER': 'postgres',
+        'PASSWORD': '1234',
+        'PORT': '5432'
+    }
+}
 
 # Password validation
 # https://docs.djangoproject.com/en/3.2/ref/settings/#auth-password-validators

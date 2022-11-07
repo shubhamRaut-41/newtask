@@ -51,7 +51,7 @@ class UserCreationAPI(APIView):
             mail = EmailService.send(emsg, obj)
             if mail == 1:
                 return Response({
-                    'sucess': "Please check your mail for verification..."
+                    'success': "Please check your mail for verification..."
                 }, status=status.HTTP_200_OK)
         return Response(user_form.errors, status=status.HTTP_400_BAD_REQUEST)
 
